@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2744;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1c38;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5c842;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c9922a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4fc3f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0288d1;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="32" height="32" rx="6" ry="6" fill="url(#bgGrad)"/>
+
+  <!-- Balance / scales base (juridique) -->
+  <rect x="15.5" y="10" width="1" height="14" fill="url(#goldGrad)" rx="0.5"/>
+  <rect x="10" y="22.5" width="12" height="1" fill="url(#goldGrad)" rx="0.5"/>
+
+  <!-- Balance beam -->
+  <rect x="9" y="12" width="14" height="1" fill="url(#goldGrad)" rx="0.5"/>
+
+  <!-- Left pan -->
+  <path d="M9.5 13 Q8 16 10 16.5 Q12 17 13.5 16.5 Q15 16 13.5 13 Z" fill="url(#goldGrad)" opacity="0.85"/>
+
+  <!-- Right pan -->
+  <path d="M18.5 13 Q17 16 18.5 16.5 Q20.5 17 22 16.5 Q23.5 16 22.5 13 Z" fill="url(#goldGrad)" opacity="0.85"/>
+
+  <!-- AI circuit dots (top right corner accent) -->
+  <circle cx="25" cy="7" r="1.2" fill="url(#aiGlow)" filter="url(#glow)"/>
+  <circle cx="22" cy="7" r="0.7" fill="#4fc3f7" opacity="0.7"/>
+  <line x1="22.7" y1="7" x2="23.8" y2="7" stroke="#4fc3f7" stroke-width="0.5" opacity="0.8"/>
+
+  <!-- Small neural node top left -->
+  <circle cx="7" cy="7" r="1" fill="#4fc3f7" opacity="0.5" filter="url(#glow)"/>
+
+  <!-- Top pin of scale -->
+  <circle cx="16" cy="10" r="1" fill="url(#goldGrad)"/>
+</svg>
