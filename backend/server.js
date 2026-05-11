@@ -7,8 +7,10 @@ const analyseRoute = require("./routes/analyse");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const URL_FRONTEND = process.env.URL_FRONTEND;
+const URL_BACKEND = process.env.URL_BACKEND;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: URL_FRONTEND }));
 app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
@@ -46,6 +48,14 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Erreur serveur interne" });
 });
 
+// backend/server.js — ajouter un self-ping toutes les 10 min
+setInterval(
+  () => {
+    fetch(URL_BACKEND + "/api/health").catch(() => {});
+  },
+  12 * 60 * 1000,
+);
+
 app.listen(PORT, () => {
-  console.log(` Serveur démarré sur http://localhost:${PORT}`);
+  console.log(` Serveur démarré sur ${URL_BACKEND}`);
 });
