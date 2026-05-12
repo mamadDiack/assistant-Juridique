@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: lexci-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+      - key: URL_FRONTEND
+        value: https://assistant-juridique.vercel.app
+      - key: URL_BACKEND
+        value: https://assistant-juridique-wwem.onrender.com/api/health
+      - key: GROQ_API_KEY
+        sync: false

@@ -51,7 +51,9 @@ app.use((err, req, res, next) => {
 // backend/server.js — ajouter un self-ping toutes les 10 min
 setInterval(
   () => {
-    fetch(URL_BACKEND + "/api/health").catch(() => {});
+    fetch("https://assistant-juridique-wwem.onrender.com/api/health").catch(
+      () => {},
+    );
   },
   12 * 60 * 1000,
 );
