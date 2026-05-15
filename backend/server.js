@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const URL_FRONTEND = process.env.URL_FRONTEND;
 const URL_BACKEND = process.env.URL_BACKEND;
 
-app.use(cors({ origin: URL_FRONTEND }));
+app.use(cors({ origin: "https://assistant-juridique-eight.vercel.app" }));
 app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
@@ -59,5 +59,7 @@ setInterval(
 );
 
 app.listen(PORT, () => {
-  console.log(` Serveur démarré sur ${URL_BACKEND}`);
+  console.log(
+    ` Serveur démarré sur https://assistant-juridique-wwem.onrender.com`,
+  );
 });

@@ -12,6 +12,6 @@ services:
       - key: URL_FRONTEND
         value: https://assistant-juridique-eight.vercel.app
       - key: URL_BACKEND
-        value: https://assistant-juridique-wwem.onrender.com/api/health
+        value: https://assistant-juridique-wwem.onrender.com
       - key: GROQ_API_KEY
         sync: false
